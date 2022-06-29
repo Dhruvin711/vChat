@@ -1,3 +1,32 @@
-<a href="/"> LOGO </a>
+{% comment %} <a href="/"> LOGO </a>
+
+<form method="GET" action="{% url 'home' %}">
+    <input type='text' name='q' placeholder="Search Rooms..." />
+</form> {% endcomment %}
+
+<nav class="navbar navbar-light navbar-expand-lg bg-light">
+
+    <div class="container-fluid">
+
+      <a class="navbar-brand" href="{% url 'home' %}">vChat</a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0"></ul>
+        
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" name="q" type="search" placeholder="Search Rooms..." aria-label="Search">
+          <button class="btn btn-outline-primary" type="submit">Search</button>
+        </form>
+
+      </div>
+
+    </div>
+
+</nav>
 
 <hr>
