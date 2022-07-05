@@ -4,20 +4,16 @@
 
 <style>
 
-    .home-container {
-        display: grid;
-        grid-template-columns: 1fr 3fr;
-    }
-
     .browse-topics a{
         display: block;
     }
 
 </style> 
 
-<div class="home-container">
+<div class="container home-container">
+<div class="row">
 
-    <div class="browse-topics">
+    <div class="browse-topics col-3">
         <h3>Browse Topics</h3>
         <hr>
 
@@ -32,7 +28,7 @@
         {% endfor %}
     </div>
 
-    <div>
+    <div class="col-9">
         <h5>{{room_count}} Rooms available</h5>
 
         <a href="{% url 'create-room' %}"> Create Room </a>
@@ -41,8 +37,11 @@
         {% for room in rooms %}
 
         <div>
-            <a href="{% url 'update-room' room.id %}">Edit</a>
-            <a href="{% url 'delete-room' room.id %}">Delete</a>
+
+            {% if request.user == room.host %}
+                <a href="{% url 'update-room' room.id %}">Edit</a>
+                <a href="{% url 'delete-room' room.id %}">Delete</a>
+            {% endif %}
 
             <span> @{{room.host.username}} </span>
 
@@ -56,6 +55,7 @@
         </div>
     </div>
 
+</div>
 </div>
 
 {% endblock content %}
