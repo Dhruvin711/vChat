@@ -3,6 +3,8 @@
 ## Description 
 A Group video calling application using the Agora Web SDK with a Django backend.
 
+Demo of the application: https://dhruvin711.pythonanywhere.com/
+
 ##  How to use this source code
 
 #### 1 - Clone repo
